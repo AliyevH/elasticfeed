@@ -1,9 +1,8 @@
 from setuptools import setup, find_packages
-from elastic_feeder.utils.version import VERSION
 
 setup(
     name="elasticfeed",
-    version=VERSION,
+    version="1.0.2",
     include_package_data=True,
     packages=find_packages(),
     author="Hasan Aliyev",
