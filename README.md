@@ -34,6 +34,7 @@ fd = FeedElastic(
         port="port",
         filename="<full path>",
         index="index name",
+        http_auth=('username', 'password'),
         properties={
             "some-name": {
                 "type": "some-type",
