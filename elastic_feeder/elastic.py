@@ -18,9 +18,6 @@ class Elastic:
         self.headers = headers
         self.properties = properties
 
-        if self.properties:
-            self.create_schema_map()
-
         if not self.get_indices():
             self.create_indices()       
     
@@ -40,10 +37,16 @@ class Elastic:
         }
     
     def create_indices(self):
-        self.es.indices.create(
-            index = self.index,
-            body = self.mapping
-        )
+        if self.properties:
+            self.es.indices.create(
+                index = self.index,
+                body = self.mapping
+            )
+        else:
+            self.es.indices.create(
+                index = self.index,
+            )
+
     
     def get_indices(self):
         try:
