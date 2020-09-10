@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="elasticfeed",
-    version="1.0.2",
+    version="1.0.3",
     include_package_data=True,
     packages=find_packages(),
     author="Hasan Aliyev",
@@ -12,7 +12,7 @@ setup(
     url="https://github.com/AliyevH/elk_feeder",
     install_requires=["click", "elasticsearch"],
     entry_points = {
-        'console_scripts': ['feeder=elastic_feeder.scripts.commands:command'],
+        'console_scripts': ['elasticfeed=elastic_feeder.scripts.commands:command'],
     },
     classifiers=[
         'Intended Audience :: Developers',
