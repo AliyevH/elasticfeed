@@ -1,7 +1,7 @@
 import csv
 from elasticsearch import Elasticsearch, helpers
-from elk_feeder.elk import Elk
-from elk_feeder.helper import dict_data
+from elastic_feeder.elastic import Elastic
+from elastic_feeder.helper import dict_data
 
 
 class CsvReader:

@@ -1,5 +1,5 @@
 import click
-from elk_feeder.controller import FeedElastic
+from elastic_feeder.controller import FeedElastic
 
 
 @click.group()

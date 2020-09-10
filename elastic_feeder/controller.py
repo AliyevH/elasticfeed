@@ -1,11 +1,11 @@
 from elasticsearch import Elasticsearch
 
-from elk_feeder.csv_reader import CsvReader
-from elk_feeder.exception import ElkConnectionError
-from elk_feeder.elk import Elk
+from elastic_feeder.csv_reader import CsvReader
+from elastic_feeder.exception import ElkConnectionError
+from elastic_feeder.elastic import Elastic
 
 class FeedElastic:
-    def __init__(self, host: str, port: int, filename: str, index: str):
+    def __init__(self, host: str, port: int, filename: str, index: str, properties: dict=None):
         """ 
         FeedElastic class is used to create and insert data from csv into Elasticsearch
         
@@ -18,6 +18,7 @@ class FeedElastic:
         self.port = port
         self.filename = filename
         self.index = index
+        self.properties = properties
 
     def read_csv(self):
         """
@@ -44,7 +45,7 @@ class FeedElastic:
         """ 
         Create Elasticsearch index
         """
-        self.elk = Elk(self.csv_headers, es_instance=self.es, index=self.index)
+        self.elastic = Elastic(self.csv_headers, es_instance=self.es, index=self.index, properties=self.properties)
     
     def generate_data(self):
         """ 
@@ -56,7 +57,7 @@ class FeedElastic:
         """ 
         Bulk insert data from csv object.
         """
-        self.elk.bulk_insert(self.gen_data)
+        self.elastic.bulk_insert(self.gen_data)        
 
     def run(self):
         """ 

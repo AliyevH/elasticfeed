@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
-from csv_to_elk.utils.version import VERSION
+from elastic_feeder.utils.version import VERSION
 
 setup(
-    name="feeder",
+    name="elasticfeed",
     version=VERSION,
     include_package_data=True,
     packages=find_packages(),
@@ -10,13 +10,13 @@ setup(
     author_email="hasan.aliyev.555@gmail.com",
     description="Export csv data into Elasticsearch",
     license="MIT",
-    url="github.com",
+    url="https://github.com/AliyevH/elk_feeder",
     install_requires=["click", "elasticsearch"],
     entry_points = {
-        'console_scripts': ['feeder=elk_feeder.scripts.commands:command'],
+        'console_scripts': ['feeder=elastic_feeder.scripts.commands:command'],
     },
     classifiers=[
-        'Intended Audience :: Developers, Adminstrators',
+        'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
         'License :: OSI Approved :: MIT License',
         "Programming Language :: Python",
