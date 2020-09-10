@@ -29,13 +29,12 @@ elasticfeed  --host 127.0.0.1 --port 9200 <full filepath>
 ```
 
 
-```bash
 
 ## Supported OS
 Linux, MacOS
 
+
 ## 🌱 Contributing
 Fell free to open issue and send pull request.
 
-### startapp  supports Python >= 3.6
-```
+### elasticfeed  supports Python >= 3.6
