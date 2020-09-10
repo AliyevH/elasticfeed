@@ -29,7 +29,7 @@ elasticfeed  --host 127.0.0.1 --port 9200 <full filepath>
 from elastic_feeder.controller import FeedElastic
 ```
 ```python
-fd = FeedElastic(
+fe = FeedElastic(
         host="hostname or ip address", 
         port="port",
         filename="<full path>",
@@ -49,7 +49,7 @@ fd = FeedElastic(
             }
 ```
 ```python
-fd.run()
+fe.run()
 ```
 
 
