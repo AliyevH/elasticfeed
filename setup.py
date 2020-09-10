@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="elasticfeed",
-    version="1.0.3",
+    version="1.0.4",
     include_package_data=True,
     packages=find_packages(),
     author="Hasan Aliyev",
