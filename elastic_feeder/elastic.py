@@ -17,6 +17,7 @@ class Elastic:
 
         self.headers = headers
         self.properties = properties
+        self.create_schema_map()
 
         if not self.get_indices():
             self.create_indices()       
