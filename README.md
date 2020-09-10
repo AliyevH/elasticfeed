@@ -21,7 +21,7 @@ elasticfeed  --help
 ```
 
 ```bash
-elasticfeed  --host 127.0.0.1 --port 9200 <full filepath>
+elasticfeed  --host 127.0.0.1 --port 9200 --username --password <full filepath>
 ```
 
 ### 🕹 Python Module
