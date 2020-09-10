@@ -14,20 +14,17 @@ From csv into Elasticsearch
 ```
 
 
-### 🕹 Guide
+### 🕹 Commandline
 
 ```bash
-
 elasticfeed  --help 
-
 ```
 
 ```bash
-
 elasticfeed  --host 127.0.0.1 --port 9200 <full filepath>
-
 ```
 
+### 🕹 Python Module
 ```python
 from elastic_feeder.controller import FeedElastic
 ```
