@@ -35,6 +35,6 @@ Linux, MacOS
 
 
 ## 🌱 Contributing
-Fell free to open issue and send pull request.
+Feel free to open issue and send pull request.
 
 ### elasticfeed  supports Python >= 3.6
