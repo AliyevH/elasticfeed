@@ -1,6 +1,7 @@
 from pprint import pprint
 from elasticsearch import Elasticsearch, helpers
 from elasticsearch.exceptions import NotFoundError
+from elastic_feeder.helper import logger   
 from pprint import pprint
 
 class Elastic:
@@ -52,16 +53,16 @@ class Elastic:
     def get_indices(self):
         try:
             self.es.indices.get(self.index)
-            print(f"{self.index} index found. Skipping index creation")
+            logger.info(f"{self.index} index found. Skipping index creation")
             return True
         except NotFoundError as err:
-            print(err)
-            print(f"{self.index} index not found. Creating index.")
+            logger.error(err)
+            logger.warnings(f"{self.index} index not found. Creating index.")
             return False
 
     def bulk_insert(self, gen_data):
         try:
-            print("Begining bulk insert")
+            logger.warning("Begining bulk insert")
             helpers.bulk(self.es, gen_data, index=self.index)
         except Exception as err:
-            print("Got err -> ", err)
+            logger.error(err,exc_info=True)

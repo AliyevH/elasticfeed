@@ -1,7 +1,7 @@
 import csv
 from elasticsearch import Elasticsearch, helpers
 from elastic_feeder.elastic import Elastic
-from elastic_feeder.helper import dict_data
+from elastic_feeder.helper import dict_data, logger
 
 
 class CsvReader:
@@ -49,10 +49,10 @@ class CsvReader:
                     
                     if data is None:
                         failed += 1
-                        print(line_number)
+                        logger.info(line_number)
 
                     line_number += 1
                     yield  data
 
-            print(f"Failed {failed} docs")
-            print(f"Inserted {line_number} docs")
+            logger.info(f"Failed {failed} docs")
+            logger.info(f"Inserted {line_number} docs")
