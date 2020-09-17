@@ -52,6 +52,10 @@ fe = FeedElastic(
 fe.run()
 ```
 
+```
+First column is used as a key for data in Elasticsearch.
+```
+
 
 ## Supported OS
 Linux, MacOS
