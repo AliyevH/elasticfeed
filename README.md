@@ -52,10 +52,8 @@ fe = FeedElastic(
 fe.run()
 ```
 
-```
-Important Note! 
+## Note
 First column is used as a key for data in Elasticsearch.
-```
 
 
 ## Supported OS
