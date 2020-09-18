@@ -4,9 +4,8 @@ from elastic_feeder.csv_reader import CsvReader
 from elastic_feeder.exception import ElkConnectionError
 from elastic_feeder.elastic import Elastic
 from elasticsearch.exceptions import AuthenticationException
-
+from elastic_feeder.helper import logger   
 from http import HTTPStatus
-
 import requests
 import sys
 
@@ -49,7 +48,7 @@ class FeedElastic:
         try:
             self.es.ping()
         except Exception as err:
-            print("Checking connection failed. Host or port is unavailable")    
+            logger.error("Checking connection failed. Host or port is unavailable")    
 
 
         try:
@@ -57,7 +56,7 @@ class FeedElastic:
             if response.status_code == HTTPStatus.UNAUTHORIZED:
                 raise Exception("Authentication failed. Username or password is incorrect")
         except Exception as err:
-            print(err)
+            logger.error(err,exc_info=True)
             sys.exit(0)
         
         
@@ -80,7 +79,6 @@ class FeedElastic:
         self.elastic.bulk_insert(self.gen_data)        
 
     def run(self):
-        pass
         """ 
         Run method is used to consequently run class method to automate data feeding into Elasticsearch
         """

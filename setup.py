@@ -10,7 +10,7 @@ setup(
     description="Export csv data into Elasticsearch",
     license="MIT",
     url="https://github.com/AliyevH/elk_feeder",
-    install_requires=["click", "elasticsearch"],
+    install_requires=["click", "elasticsearch","coloredlogs"],
     entry_points = {
         'console_scripts': ['elasticfeed=elastic_feeder.scripts.commands:command'],
     },
